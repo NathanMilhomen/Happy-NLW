@@ -1,15 +1,11 @@
 import express from "express";
 
 import "./databases/connection";
+import routes from "./routes";
 
 const app = express();
+
 app.use(express.json());
-
-app.get("/user", (request, response) => {
-    response.send("Quero que tu vá, vá ")
-})
-
-
-
+app.use(routes);
 
 app.listen(3333);
